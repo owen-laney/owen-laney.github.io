@@ -1,0 +1,70 @@
+---
+# /* for jekyll */
+---
+
+$text: #333;
+$bg: #fff;
+$footer-bg: #ebebeb;
+$header-text: #fff;
+$header-bg: #1d1d1d;
+$accent: #2c5bdb;
+
+* {
+    font-family: sans-serif;
+}
+
+html,
+body {
+    color: $text;
+    background: $bg;
+    margin: 0;
+    height: 100%;
+    margin: 0;
+}
+
+.content {
+    padding-left: 20%;
+    padding-right: 20%;
+    min-height: 100%;
+    margin: 0 auto -50px;
+}
+
+.push {
+    height: 50px;
+}
+
+::selection {
+    color: $accent;
+    background: #2c5bdb3a;
+}
+
+h1 {
+    margin-top: 1em;
+    margin-bottom: 0;
+    font-size: 2.25em;
+}
+
+p {
+    line-height: 1.5em;
+}
+
+a {
+    color: $accent;
+}
+
+.subtitle {
+    margin-top: 0.25em;
+    font-size: 1.25em;
+    color: #999;
+}
+
+header {
+    color: $header-text;
+    background: $header-bg;
+}
+
+footer {
+    color: $text;
+    background: $footer-bg;
+    height: 50px;
+}
