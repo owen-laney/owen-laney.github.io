@@ -61,6 +61,43 @@ a {
 header {
     color: $header-text;
     background: $header-bg;
+    padding: .75em;
+    border-bottom: 1px solid $border;
+    position: fixed;
+    top: 0%;
+    width: 100%;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    font-style: none;
+    font-size: 1em;
+}
+
+header h1 {
+    font-weight: 350;
+    font-size: 3em;
+    line-height: 0.75em;
+}
+
+.home-navbar {
+    background: blue;
+    border: none;
+}
+
+.home-navbar a {
+    color: $text;
+}
+
+.home-header {
+    text-align: center;
+}
+
+.home-header h1 {
+    font-weight: 300;
+    font-size: 3em;
+    
 }
 
 footer {
