@@ -5,13 +5,16 @@
 $text: #2e333d;
 $bg: #fff;
 $accent: #f3d62f;
+$accent2: #57dcf3;
 $shadow: #00000052;
+$hoverpos: -4px;
 $active: #ececec;
 $rad: 8px;
 
 * {
     box-sizing: border-box;
     font-family: monospace;
+    transition: 20ms;
 }
 
 html,
@@ -57,21 +60,24 @@ img {
     border: 1px solid $text;
 }
 
-all-articles {
-    background: $accent-2; 
+.all-articles {
+    background: $accent2; 
     padding: .5em;
     border: 1px solid $text;
     border-radius: $rad;
     box-shadow: 2px 2px $shadow;
     cursor: pointer;
     display: inline-block;
+    color: $text;
+    text-decoration: none;
+    text-align: center;
 }
 
-all-articles:hover {
-    transform: translateY($hover-pos);
+.all-articles:hover {
+    transform: translateY($hoverpos);
 }
 
-all-articles:active {
+.all-articles:active {
     transform: translate(0, 0);
     box-shadow: inset 2px 2px $shadow;
 }
@@ -87,7 +93,7 @@ all-articles:active {
 }
 
 .post-card:hover {
-    transform: translateY(-6px);
+    transform: translateY($hoverpos);
  }
 
 .post-card img {
@@ -101,6 +107,9 @@ all-articles:active {
         grid-column: span 3 / auto;
 
     }
+    .all-articles {
+        grid-column: span 3 / auto;
+    }
 }
 
  .post-card:active {
@@ -113,6 +122,12 @@ all-articles:active {
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1/3fr));
+}
+
+.all-posts-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1/2fr));
 }
 
 .subtitle {
@@ -136,6 +151,8 @@ header {
     border-bottom: 1px solid $text;
     box-shadow: 0 2px $shadow;
     margin-bottom: 20px;
+    justify-content: space-between;
+    display: flex;
 }
 
 header a {
@@ -150,4 +167,8 @@ header a {
 header a:hover {
     color: $bg;
     background: $text;
+}
+
+header div {
+    display: inline-block;
 }
