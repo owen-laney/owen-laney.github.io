@@ -57,6 +57,25 @@ img {
     border: 1px solid $text;
 }
 
+all-articles {
+    background: $accent-2; 
+    padding: .5em;
+    border: 1px solid $text;
+    border-radius: $rad;
+    box-shadow: 2px 2px $shadow;
+    cursor: pointer;
+    display: inline-block;
+}
+
+all-articles:hover {
+    transform: translateY($hover-pos);
+}
+
+all-articles:active {
+    transform: translate(0, 0);
+    box-shadow: inset 2px 2px $shadow;
+}
+
 .post-card {
     border-radius: $rad;
     padding: 1rem;
