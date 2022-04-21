@@ -1,4 +1,4 @@
 ---
     layout: all
-    title: All Articles
+    title: Posts
 ---
