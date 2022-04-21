@@ -6,9 +6,15 @@
 
 <html>
   <body>
-    <header><a href={{ "/" }}>Home</a></header>
-    <div class="content">
+    <header>
+      <a href={{ "/" }}>Home</a>
+      <a href={{ "/about" }}>About</a>
+      <a href={{ "/portfolio" }}>Portfolio</a>
+      <a href={{ "/blog" }}>Blog</a>
+    </header>
+
+    <section class="content">
       {{ content }}
-    </div>
+    </section>
   </body>
 </html>
