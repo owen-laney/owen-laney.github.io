@@ -1,4 +1,4 @@
 ---
-    layout: all
+    layout: portfolio
     title: Posts
 ---
