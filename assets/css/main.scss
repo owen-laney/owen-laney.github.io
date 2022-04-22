@@ -33,8 +33,8 @@ body {
 }
 
 .post-content {
-    padding-left: 20%;
-    padding-right: 20%;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 ::selection {
@@ -146,8 +146,10 @@ img {
 
 .post-card img {
     width: 100%;
+    max-width: 100%;
     height: 15em;
     object-fit: cover;
+    display: inline-block;
 }
 
  @media screen and (min-width: 600px) {
