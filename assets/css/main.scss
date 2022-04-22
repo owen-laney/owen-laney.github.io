@@ -2,14 +2,14 @@
 # /* for jekyll */
 ---
 
-$text: #2e333d;
-$bg: #fff;
-$accent: #f3d62f;
-$accent2: #57dcf3;
 $shadow: #00000052;
+$text: #1a1a1a;
+$bg: #fff;
+$accent: #fad636;
+$accentActive: #e0c135;
 $hoverpos: -4px;
 $active: #ececec;
-$rad: 8px;
+$rad: 0px;
 
 * {
     box-sizing: border-box;
@@ -107,7 +107,7 @@ img {
 }
 
 .all-articles {
-    background: $accent2; 
+    background: $accent; 
     padding: .5em;
     border: 1px solid $text;
     border-radius: $rad;
@@ -126,6 +126,7 @@ img {
 .all-articles:active {
     transform: translate(0, 0);
     box-shadow: inset 2px 2px $shadow;
+    background: $accentActive
 }
 
 .post-card {
