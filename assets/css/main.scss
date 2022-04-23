@@ -24,6 +24,7 @@ body {
     margin: 0;
     height: 100%;
     flex-direction: column;
+    font-size: 12px;
 }
 
 .content {
@@ -32,27 +33,21 @@ body {
     max-width: 80rem;
 }
 
-.post-content {
-    padding-left: 10%;
-    padding-right: 10%;
-}
-
 ::selection {
     color: $text;
     background: $accent;
 }
 
-h1 {
-    margin-bottom: 0;
-    font-size: 2.25em;
-}
-
 p {
     line-height: 1.5em;
+    font-size: 1.16em;
+    font-family: sans-serif;
 }
 
 a {
-    color: $accent;
+    color: $text;
+    background: $accent;
+
 }
 
 img {
@@ -138,6 +133,7 @@ img {
     text-decoration: none;
     color: $text;
     display: inline-block;
+    background: $bg;
 }
 
 .post-card:hover {
@@ -160,6 +156,11 @@ img {
     .all-articles {
         grid-column: span 3 / auto;
     }
+    .post-content {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    
 }
 
  .post-card:active {
@@ -210,6 +211,7 @@ img {
     font-size: 1.25em;
     padding: 0.5em;
     display: inline-block;
+    background: transparent;
 }
 
 .navbar a:hover {
@@ -219,4 +221,22 @@ img {
 
 .navbar div {
     display: inline-block;
+}
+
+.title-header {
+    color: $text;
+}
+
+.title-header p {
+    font-family: monospace;
+    margin: 0em;
+}
+
+.title-header h2 {
+    margin: 0em;
+    margin-top: 1rem;
+}
+
+.post-title h2 {
+    font-size: 20em;
 }

@@ -17,11 +17,13 @@
                 <a class="post-card post-card-1" href="{{ post.url }}" >
                     <div class="post-card-content">
                         <img src="{{ post.thumbnail }}" />
-                        <h2>{{ post.title}}</h2>
-                        <p>
-                            {{ post.date | date: "%b %-d, %Y" }}<br>
-                            {{ post.description }}
-                        </p>
+                        <div class="title-header">
+                            <h2>{{ post.title}}</h2>
+                            <p>
+                                {{ post.description }}<br>
+                                {{ post.date | date: "%b %-d, %Y" }}
+                            </p>
+                        </div>
                     </div>
                 </a>
             {% endfor %}

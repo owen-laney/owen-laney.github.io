@@ -5,8 +5,13 @@ layout: default
 <html>
   <body>
     <div class="post-content">
-      <h1>{{ page.title }}</h1>
-      <p class="subtitle">{{page.description}}</p>
+      <div class="title-header">
+        <h2 class="post-title">{{ page.title}}</h2>
+        <p>
+            {{ page.description }}<br>
+            {{ page.date | date: "%b %-d, %Y" }}
+        </p>
+      </div>
       {{ content }}
     </div>
   </body>
