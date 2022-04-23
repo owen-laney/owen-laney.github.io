@@ -171,7 +171,7 @@ img {
 .posts-grid {
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1/3fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
 .all-posts-grid {
@@ -186,8 +186,6 @@ img {
     color: #999;
 }
 
-
-
 .preview-header {
     display: inline-block;
     line-height: 1em;
@@ -195,7 +193,7 @@ img {
     vertical-align: top;
 }
 
-header {
+.navbar {
     color: $text;
     background: $bg;
     border-bottom: 1px solid $text;
@@ -205,7 +203,7 @@ header {
     display: flex;
 }
 
-header a {
+.navbar a {
     color: $text;
     text-decoration: none;
     font-style: none;
@@ -214,11 +212,11 @@ header a {
     display: inline-block;
 }
 
-header a:hover {
+.navbar a:hover {
     color: $bg;
     background: $text;
 }
 
-header div {
+.navbar div {
     display: inline-block;
 }
