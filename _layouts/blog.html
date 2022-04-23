@@ -6,15 +6,17 @@
 {% assign blogPosts = site.posts | where:'category', 'blog' %}
 <section class="all-posts-grid">
     {% for post in blogPosts limit:8 offset:0 %}
-    <a class="post-card" href="{{ post.url }}" >
-        <div class="post-card-content">
-            <img src="{{ post.thumbnail | relative_url}}" />
-            <h2>{{ post.title}}</h2>
-            <p>
-                {{ post.date | date: "%b %-d, %Y" }}<br>
-                {{ post.description }}
-            </p>
-        </div>
-    </a>
+        <a class="post-card post-card-1" href="{{ post.url }}" >
+            <div class="post-card-content">
+                <div class="featured-image" style="background-image:url( {{ post.thumbnail | relative_url}} )"></div>
+                <div class="title-header">
+                    <h2>{{ post.title}}</h2>
+                    <p>
+                        {{ post.description }}<br>
+                        {{ post.date | date: "%b %-d, %Y" }}
+                    </p>
+                </div>
+            </div>
+        </a>
     {% endfor %}
 </section>
