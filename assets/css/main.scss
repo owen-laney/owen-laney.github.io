@@ -10,6 +10,7 @@ $accentActive: #e0c135;
 $hoverpos: -4px;
 $active: #ececec;
 $rad: 0px;
+$code: #f8f8f8;
 
 * {
     box-sizing: border-box;
@@ -59,6 +60,36 @@ img {
 
 h1 {
     margin-bottom: 0.25em;
+}
+
+code {
+    background: $bg;
+    display: inline-block;
+    padding: 0.5em;
+    box-shadow: inset 2px 2px $shadow;
+    border: 1px solid $text;
+    background: $code;
+}
+
+.language-plaintext {
+    padding: 0;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+}
+
+ul {
+    margin-top: 0em;
+    margin-bottom: 2em;
+}
+
+li {
+    font-family: sans-serif;
+    font-size: 1.16em;
+    line-height: 1.5em;
+}
+
+pre.highlight {
+    background: $bg;
 }
 
 .modal {
