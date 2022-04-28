@@ -1,21 +1,36 @@
 ---
 # /* for jekyll */
 ---
+;
 
-$shadow: #00000052;
+/* Variables */
+
 $text: #1a1a1a;
+$text-secondary: #333333;
+$txt-tertiary: #616161;
 $bg: #fff;
 $accent: #fad636;
-$accentActive: #e0c135;
+$accentActive: #ddbf38;
 $hoverpos: -4px;
 $active: #ececec;
-$rad: 0px;
 $code: #f8f8f8;
+$shadow-color: $text-secondary;
+
+$font-size: default;
+$rad: 8px;
+$small-rad: 4px;
+$border: 2px solid $text-secondary;
+$shadow: 2px 2px $shadow-color;
+
+
+/* Main styles  for non-custom classes*/
 
 * {
     box-sizing: border-box;
-    font-family: monospace;
+    font-family: sans-serif;
     transition: 20ms;
+    line-height: 1.5em;
+    font-size: 16px;
 }
 
 html,
@@ -25,13 +40,12 @@ body {
     margin: 0;
     height: 100%;
     flex-direction: column;
-    font-size: 12px;
 }
 
 .content {
     padding: 1rem;
     margin: 0 auto;
-    max-width: 80rem;
+    max-width: 60rem;
 }
 
 ::selection {
@@ -41,132 +55,59 @@ body {
 
 p {
     line-height: 1.5em;
-    font-size: 1.16em;
-    font-family: sans-serif;
-    margin-top: 0em;
-    margin-bottom: 2em;
 }
 
 a {
     color: $text;
-    background: $accent;
+    font-weight: bold;
 
 }
 
 img {
-    border-radius: $rad;
-    border: 1px solid $text;
+    border-radius: $small-rad;
+    border: $border;
 }
 
 h1 {
-    margin-bottom: 0.25em;
+    font-size: 3em;
+    font-weight: 500;
+    font-kerning: 100px;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: 500;
+}
+
+h3 {
+    font-size: 1.25em;
+    font-weight: 500;
+    margin: 0;
 }
 
 code {
     background: $bg;
     display: inline-block;
     padding: 0.5em;
-    box-shadow: inset 2px 2px $shadow;
-    border: 1px solid $text;
+    border: $border;
     background: $code;
+    border-radius: $rad;
 }
 
 .language-plaintext {
-    padding: 0;
-    padding-left: 0.25em;
-    padding-right: 0.25em;
+    padding: 0.25em;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-radius: $small-rad;
 }
 
-ul {
-    margin-top: 0em;
-    margin-bottom: 2em;
-}
-
-li {
-    font-family: sans-serif;
-    font-size: 1.16em;
-    line-height: 1.5em;
-}
-
-pre.highlight {
-    background: $bg;
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    padding-top: 100px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.4);
-}
-
-.modal-window {
-    background-color: #fefefe;
-    margin: auto;
-    border: 1px solid $text;
-    border-radius: $rad;
-    width: 60rem;
-}
-
-.modal-content {
-    padding: 1rem;
-}
-
-.modal-decoration {
-    width: 100%;
-    border-bottom: 1px solid $text;
-}
-
-.close {
-    color: $text;
-    height: 100%;
-    padding: .5em;
-    font-size: 1.25em;
-    display: inline-block;
-    border-radius: $rad 0 0 0;
-}
-
-.close:hover,
-.close:focus {
-    color: $bg;
-    background: $text;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.all-articles {
-    background: $accent; 
-    padding: .5em;
-    border: 1px solid $text;
-    border-radius: $rad;
-    box-shadow: 2px 2px $shadow;
-    cursor: pointer;
-    display: inline-block;
-    color: $text;
-    text-decoration: none;
-    text-align: center;
-    margin-bottom: 1em;
-}
-
-.all-articles:hover {
-    transform: translateY($hoverpos);
-}
-
-.all-articles:active {
-    transform: translate(0, 0);
-    box-shadow: inset 2px 2px $shadow;
-    background: $accentActive
-}
+/* UI element styles (navbar, header, cards, etc.) */
 
 .post-card {
     border-radius: $rad;
     padding: 1rem;
-    box-shadow: 2px 2px $shadow;
-    border: 1px solid $text;
+    box-shadow: $shadow;
+    border: $border;
     text-decoration: none;
     color: $text;
     display: inline-block;
@@ -174,48 +115,32 @@ pre.highlight {
     display: flex;
     flex-direction: column;
     width: 100%;
-
-}
-
-.post-card:hover {
-    transform: translateY($hoverpos);
- }
-
-.featured-image {
-    width: 100%;
-    height: 20em;
-    display: block;
-    position: relative;
-    overflow: hidden;
-    background-position: 50%;
-    background-size: cover;
-}
-
- @media screen and (min-width: 600px) {
-    .post-card-1 {
-        grid-column: span 3 / auto;
-
+    &:hover {
+        transform: translateY($hoverpos);
     }
-    .all-articles {
-        grid-column: span 3 / auto;
+    &:active {
+        transform: translate(0px, 0px);
+        box-shadow: inset $shadow;
+        background-color: $active;
     }
-    .post-content {
-        padding-left: 10%;
-        padding-right: 10%;
-    }
-    
+    .featured-image {
+        width: 100%;
+        height: 15em;
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+        background-position: 50%;
+        background-size: cover;
+        border-radius: $small-rad;
+        border: $border;
+    }    
 }
-
- .post-card:active {
-     transform: translate(0px, 0px);
-     box-shadow: inset 2px 2px $shadow;
-     background-color: $active;
- }
 
 .posts-grid {
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    margin-bottom: 1rem;
 }
 
 .all-posts-grid {
@@ -230,62 +155,131 @@ pre.highlight {
     color: #999;
 }
 
-.preview-header {
-    display: inline-block;
-    line-height: 1em;
-    padding: none;
-    vertical-align: top;
+
+@media screen and (min-width: 600px) {
+    .post-card-1 {
+        grid-column: span 3 / auto;
+        .featured-image {
+            width: 60%;
+            height: 20em;
+            vertical-align: top;
+            float: left;
+        }
+        .title-header {
+            float: left;
+            max-width: 35%;
+            padding-left: 2em;
+        }
+    }
+    .more-articles {
+        grid-column: span 3 / auto;
+    }
 }
 
 .navbar {
     color: $text;
     background: $bg;
-    border-bottom: 1px solid $text;
-    box-shadow: 0 2px $shadow;
+    border-bottom: $border;
     margin-bottom: 20px;
     justify-content: space-between;
     display: flex;
-}
-
-.navbar a {
-    color: $text;
-    text-decoration: none;
-    font-style: none;
-    font-size: 1.25em;
-    padding: 0.5em;
-    display: inline-block;
-    background: transparent;
-}
-
-.navbar a:hover {
-    color: $bg;
-    background: $text;
-}
-
-.navbar div {
-    display: inline-block;
+    a {
+        color: $text;
+        text-decoration: none;
+        font-style: none;
+        padding: 0.5em;
+        display: inline-block;
+        background: transparent;
+        font-weight: normal;
+        &:hover {
+            color: $bg;
+            background: $text;
+        }
+    }
+    div {
+        display: inline-block;
+    }
 }
 
 .title-header {
     color: $text;
     display: inline-block;
-    vertical-align: middle;
+    h1 {
+        margin: 0 0 .4em;
+        overflow-wrap: break-word;
+    }
+    p {
+        margin: 0em;
+        color: $text-secondary;
+        font-size: 1.25em;
+        font-weight: normal;
+    }
+    h2 {
+        margin: 0.1em;
+    }
 }
 
-.title-header p {
-    font-family: monospace;
-    margin: 0em;
+.btn-style {
+    background: $accent; 
+    padding: .5em;
+    border: $border;
+    border-radius: $small-rad;
+    box-shadow: $shadow;
+    cursor: pointer;
+    display: inline-block;
+    color: $text;
+    text-decoration: none;
+    text-align: center;
+    &:hover {
+        transform: translateY($hoverpos);
+    }
+    &:active {
+        transform: translate(0, 0) ;
+        box-shadow: inset $shadow;
+        background: $accentActive
+    }    
 }
 
-.post-header {
-    margin-bottom: 2em;
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.281);
 }
 
-.title-header h2 {
-    margin: 0em;
-    margin-top: 1rem;
+.modal-window {
+    background-color: #fefefe;
+    margin: auto;
+    border: $border;
+    border-radius: $rad;
+    box-shadow: $shadow;
+    width: 60rem;
+    max-width: 100%;
+    .modal-content {
+        padding: 1rem;
+    }
+    .modal-decoration {
+        width: 100%;
+        border-bottom: $border;
+    }
+    .close {
+        color: $text;
+        height: 100%;
+        padding: .5em;
+        font-size: 1.25em;
+        display: inline-block;
+        border-radius: $small-rad 0 0 0;
+        &:hover {
+            color: $bg;
+            background: $text;
+            text-decoration: none;
+            cursor: pointer;
+        }    
+    }
 }
 
-.post-title h2 {
-    font-size: 20em;
-}
