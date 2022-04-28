@@ -45,6 +45,7 @@ body {
     margin: 0;
     flex-direction: column;
     background: $page-bg;
+    min-height: 100%;
 }
 
 .content {
@@ -69,6 +70,13 @@ p {
 
 a {
     color: $accent;
+    padding: 0.25em;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-radius: $small-rad;
+    &:hover {
+        background: $accent-tp;
+    }
 }
 
 img {
@@ -272,25 +280,30 @@ code {
     border: $border;
     border-radius: $rad;
     box-shadow: $shadow;
-    width: 60rem;
+    width: 40rem;
     max-width: 95%;
     .modal-content {
         padding: 1rem;
     }
-    .modal-decoration {
-        width: 100%;
-        border-bottom: $border;
-    }
-    .close {
-        color: $text;
+    h2 {
+        display: inline-block;
         height: 100%;
         padding: .5em;
-        font-size: 1.25em;
-        display: inline-block;
-        border-radius: $small-rad 0 0 0;
+        font-size: 1.5em;
+        margin: 0;
+    }
+    p {
+        padding-left: .5em;
+        padding-right: .5em;
+    }
+    .close {
+        height: 100%;
+        padding: .5em;
+        font-size: 1.5em;
+        float: right;
+        border-radius: $small-rad;
         &:hover {
-            color: $bg;
-            background: $text-secondary;
+            background: $hover;
             text-decoration: none;
             cursor: pointer;
         }    
