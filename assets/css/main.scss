@@ -7,19 +7,24 @@
 
 $text: #1a1a1a;
 $text-secondary: #333333;
-$txt-tertiary: #616161;
+$text-tertiary: #464646;
 $bg: #fff;
-$accent: #fad636;
-$accentActive: #ddbf38;
-$hoverpos: -4px;
-$active: #ececec;
-$code: #fffce1;
-$shadow-color: $text-secondary;
+$page-bg: #ffffff;
+$accent: #386bf7;
+$accent-tp: #386bf742;
+/*$accent: #fad636;*/ // Old yellow accent
+$accentActive: #2b59d8;
+$hover: #f3f3f3;
+$active: #f3f3f3;
+$code: #fafafa;
+$shadow-color: #00000000;
 
+$hoverpos: -0px;
+$hoversize: 102.5%;
 $font-size: default;
-$rad: 8px;
-$small-rad: 4px;
-$border: 2px solid $text-secondary;
+$rad: 16px;
+$small-rad: 8px;
+$border: 0px solid $text-secondary;
 $shadow: 2px 2px $shadow-color;
 
 
@@ -28,7 +33,7 @@ $shadow: 2px 2px $shadow-color;
 * {
     box-sizing: border-box;
     font-family: sans-serif;
-    transition: 20ms;
+    transition: 200ms;
     line-height: 1.5em;
     font-size: 16px;
 }
@@ -38,8 +43,8 @@ body {
     color: $text;
     background: $bg;
     margin: 0;
-    height: 100%;
     flex-direction: column;
+    background: $page-bg;
 }
 
 .content {
@@ -48,9 +53,14 @@ body {
     max-width: 60rem;
 }
 
+.center {
+    text-align: center;
+    margin: auto;
+}
+
 ::selection {
-    color: $text;
-    background: $accent;
+    color: $accent;
+    background: $accent-tp;
 }
 
 p {
@@ -58,7 +68,7 @@ p {
 }
 
 a {
-    color: $text;
+    color: $accent;
     font-weight: bold;
 
 }
@@ -92,6 +102,7 @@ code {
     background: $code;
     border-radius: $rad;
     box-shadow: $shadow;
+    font-family: monospace;
 }
 
 .language-plaintext {
@@ -117,7 +128,8 @@ code {
     flex-direction: column;
     width: 100%;
     &:hover {
-        transform: translateY($hoverpos);
+        transform: translateY($hoverpos) scale($hoversize);
+        background: $hover;
     }
     &:active {
         transform: translate(0px, 0px);
@@ -178,12 +190,12 @@ code {
 }
 
 .navbar {
-    color: $text;
-    background: $bg;
-    border-bottom: $border;
+    color: $text-secondary;
+    background: transparent;
     margin-bottom: 20px;
     justify-content: space-between;
     display: flex;
+    padding: 1em;
     a {
         color: $text;
         text-decoration: none;
@@ -192,9 +204,10 @@ code {
         display: inline-block;
         background: transparent;
         font-weight: normal;
+        border-radius: $small-rad;
         &:hover {
-            color: $bg;
-            background: $text;
+            color: $text;
+            background: $hover;
         }
     }
     div {
@@ -221,7 +234,7 @@ code {
 }
 
 .btn-style {
-    background: $accent; 
+    background: $bg; 
     padding: .5em;
     border: $border;
     border-radius: $small-rad;
@@ -233,11 +246,12 @@ code {
     text-align: center;
     &:hover {
         transform: translateY($hoverpos);
+        background: $hover;
     }
     &:active {
         transform: translate(0, 0) ;
         box-shadow: inset $shadow;
-        background: $accentActive
+        background: $active;
     }    
 }
 
@@ -260,7 +274,7 @@ code {
     border-radius: $rad;
     box-shadow: $shadow;
     width: 60rem;
-    max-width: 100%;
+    max-width: 95%;
     .modal-content {
         padding: 1rem;
     }
@@ -277,7 +291,7 @@ code {
         border-radius: $small-rad 0 0 0;
         &:hover {
             color: $bg;
-            background: $text;
+            background: $text-secondary;
             text-decoration: none;
             cursor: pointer;
         }    
