@@ -69,8 +69,6 @@ p {
 
 a {
     color: $accent;
-    font-weight: bold;
-
 }
 
 img {
@@ -186,6 +184,7 @@ code {
     }
     .more-articles {
         grid-column: span 3 / auto;
+        text-align: center;
     }
 }
 
