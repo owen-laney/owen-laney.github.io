@@ -10,10 +10,10 @@ Building a website can seem like a daunting task - There are dozens of framework
 ## Installation
 ### Linux
 Now that you've decided to make your website with Jekyll, you'll have to install it! On linux, this is fairly straightforward. First, you need to install dependencies. These vary by distribution, so find and run the command for your distro [here](https://jekyllrb.com/docs/installation/other-linux/). After that, all you need to do is install jekyll using `gem install jekyll bundler`.
-\
+
 ### MacOS
 The steps for installing jekyll on a mac are similar to linux. The first thing you need to do is install ruby using homebrew. [This guide](https://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/) has an in-depth explaination on how to do that. Once you've installed ruby you just need to run `gem install jekyll` to install jekyll, and `jekyll -v` to make sure it's is working.
-\
+
 ### Windows
 Because there are several different ways to install jekyll on windows I'm not going to cover it here. If you're using windows I would recommend checking out [jekyll's official page](https://jekyllrb.com/docs/installation/windows/), which has some great installation instructions.
 

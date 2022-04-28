@@ -13,7 +13,7 @@ $accent: #fad636;
 $accentActive: #ddbf38;
 $hoverpos: -4px;
 $active: #ececec;
-$code: #f8f8f8;
+$code: #fffce1;
 $shadow-color: $text-secondary;
 
 $font-size: default;
@@ -86,12 +86,12 @@ h3 {
 }
 
 code {
-    background: $bg;
     display: inline-block;
     padding: 0.5em;
     border: $border;
     background: $code;
     border-radius: $rad;
+    box-shadow: $shadow;
 }
 
 .language-plaintext {
@@ -99,6 +99,7 @@ code {
     padding-top: 0;
     padding-bottom: 0;
     border-radius: $small-rad;
+    box-shadow: none;
 }
 
 /* UI element styles (navbar, header, cards, etc.) */
