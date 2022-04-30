@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <head>
-    <title> {{ page.title }} | Owen Laney</title>
+    <title>
+      {% if page.title != 'Home' %}
+        {{ page.title }} | Owen Laney
+      {% else %}
+        Owen Laney
+      {% endif %}
+    </title>
     <link rel="stylesheet" href={{ "assets/css/main.css" | relative_url }}>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
@@ -9,7 +15,7 @@
   <body>
     <header class="navbar">
       <div>
-        <a href={{ "/" }}>Home</a>
+        <a class="home-btn" href={{ "/" }}>Home</a>
         <a href="#" id="aboutBtn">About</a>
         <a href={{ "/portfolio" }}>Portfolio</a>
         <a href={{ "/blog" }}>Blog</a>

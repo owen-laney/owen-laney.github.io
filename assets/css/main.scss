@@ -75,7 +75,7 @@ a {
     padding-bottom: 0;
     border-radius: $small-rad;
     &:hover {
-        background: $accent-tp;
+        color: $accentActive;
     }
 }
 
@@ -212,6 +212,9 @@ code {
         background: transparent;
         font-weight: normal;
         border-radius: $small-rad;
+        .home-btn {
+            font-family: monospace;
+        }
         &:hover {
             color: $text;
             background: $hover;
