@@ -110,6 +110,9 @@ code {
     background: $code;
     border-radius: $rad;
     font-family: monospace;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    overflow:auto;
 }
 
 .language-plaintext {
