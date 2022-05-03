@@ -2,7 +2,7 @@
 title: Making A GitHub Pages Site
 description: Jekyll makes building static websites easy
 layout: post
-thumbnail: assets/images/jekyll-tutorial.png
+thumbnail: assets/images/jekyll-tutorial.webp
 category: blog
 ---
 Building a website can seem like a daunting task - There are dozens of frameworks, languages, and hosting sites to choose from, and each one has its own advantages and disadvantages. When creating this site I chose to use the static content generator Jekyll and hosting platform GitHub pages, as they are both easy to use and tightly integrated.
