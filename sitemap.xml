@@ -14,8 +14,7 @@
     <url>
         <loc>{{site.url}}{{ page.url | remove: 'index.html' }}</loc>
     </url>
-    {% endif %}    {% endif %}
-
+    {% endif %}
     {% endif %}
     {% endfor %}
 </urlset>
