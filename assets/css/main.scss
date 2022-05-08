@@ -7,35 +7,36 @@
 
 $text: #1a1a1a;
 $text-secondary: #333333;
-$text-tertiary: #464646;
+$text-tertiary: #575757;
+$text-footer: #ffffff;
 $bg: #fff;
 $page-bg: #ffffff;
-$bg-footer: #f3f3f3;
-$accent: #386bf7;
-$accent-hover: #3665e6;
-$accent-tp: #386bf742;
+$bg-footer: #141414;
+$accent: #2b5bdf;
+$accent-tp: #386bf72f;
 /*$accent: #fad636;*/ // Old yellow accent
-$accent-active: #2b59d8;
-$hover: #f3f3f3;
+$hover: #f7f5f5;
 $active: #f3f3f3;
 $code: #fafafa;
-$shadow-color: #00000017;
+$shadow-color: #0000000c;
+$border-color: #e0e0e0;
 
 $hoverpos: -0px;
 $hoversize: 102.5%;
 $font-size: default;
-$rad: 16px;
-$small-rad: 8px;
-$border: 0px solid $text-secondary;
-$shadow: 2px 2px 8px $shadow-color;
+$rad: 8px;
+$small-rad: 4px;
+$border: 1px solid $border-color;
+$shadow: 2px 2px 4px $shadow-color;
+$shadow-hover: 2px 4px 16px $shadow-color;
 
 
 /* Main styles  for non-custom classes*/
 
 * {
     box-sizing: border-box;
-    font-family: sans-serif;
-    transition: 200ms;
+    font-family: Inter, sans-serif;
+    transition: 0ms;
     line-height: 1.5em;
     font-size: 16px;
 }
@@ -53,9 +54,8 @@ body {
 .content {
     padding: 1rem;
     margin: 0 auto;
-    max-width: 60rem;
+    max-width: 64rem;
 }
-
 .center {
     text-align: center;
     margin: auto;
@@ -72,29 +72,27 @@ p {
 
 a {
     color: $accent;
-    padding: 0.25em;
-    padding-top: 0;
-    padding-bottom: 0;
-    border-radius: $small-rad;
+    text-decoration: none;
     &:hover {
-        color: $accent-active;
+        text-decoration: underline;
     }
 }
 
 img {
     border-radius: $small-rad;
-    border: $border;
 }
 
 h1 {
     font-size: 3em;
-    font-weight: 500;
+    font-weight: 700;
     font-kerning: 100px;
+    margin: 0;
 }
 
 h2 {
     font-size: 2em;
-    font-weight: 500;
+    font-weight: 600;
+    margin: 0;
 }
 
 h3 {
@@ -115,12 +113,15 @@ code {
     overflow:auto;
 }
 
-.language-plaintext {
-    padding: 0.25em;
-    padding-top: 0;
-    padding-bottom: 0;
+code.language-plaintext {
+    display: inline;
+    padding: 0.1em;
     border-radius: $small-rad;
     box-shadow: none;
+}
+
+pre.highlight {
+    margin: none;
 }
 
 /* UI element styles (navbar, header, cards, etc.) */
@@ -136,13 +137,12 @@ code {
     display: flex;
     flex-direction: column;
     width: 100%;
+    box-shadow: $shadow;
     &:hover {
-        transform: translateY($hoverpos) scale($hoversize);
-        background: $hover;
+        box-shadow: $shadow-hover;
     }
     &:active {
-        transform: translate(0px, 0px);
-        background-color: $active;
+        box-shadow: $shadow;
     }
     .featured-image {
         width: 100%;
@@ -153,7 +153,6 @@ code {
         background-position: 50%;
         background-size: cover;
         border-radius: $small-rad;
-        border: $border;
     }    
 }
 
@@ -196,34 +195,44 @@ code {
         grid-column: span 3 / auto;
         text-align: center;
     }
+    .post-content {
+        padding-left: 6em;
+        padding-right: 6rem;
+    }
 }
 
 .navbar {
     color: $text-secondary;
     background: transparent;
-    margin-bottom: 20px;
-    justify-content: space-between;
-    display: flex;
-    padding: 1em;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    border-bottom: $border;
+    ul {
+        padding: 0;
+        list-style: none;
+        margin: 0;
+        display: flex;
+    }
     a {
-        color: $text-secondary;
+        color: $text-tertiary;
         text-decoration: none;
         font-style: none;
-        padding: 0.5em;
+        padding: 1em;
         display: inline-block;
         background: transparent;
         font-weight: normal;
         border-radius: $small-rad;
         &:hover {
             color: $text;
-            background: $hover;
         }
     }
     .home-btn {
-        font-weight: bold;
-    }
-    div {
-        display: inline-block;
+        display: flex;
+        align-items: center;
+        a {
+            color: $text-secondary;
+            font-weight: bold;
+        }
     }
 }
 
@@ -231,17 +240,16 @@ code {
     color: $text;
     display: inline-block;
     h1 {
-        margin: 0 0 .4em;
         overflow-wrap: break-word;
+        margin: 0;
     }
-    p {
+    h3 {
         margin: 0em;
-        color: $text-secondary;
+        color: $text-tertiary;
         font-size: 1.25em;
-        font-weight: normal;
     }
     h2 {
-        margin: 0.1em;
+        margin: 0;
     }
 }
 
@@ -303,9 +311,7 @@ code {
         padding: .5em;
         font-size: 1.5em;
         float: right;
-        border-radius: $small-rad;
         &:hover {
-            background: $hover;
             text-decoration: none;
             cursor: pointer;
         }    
@@ -313,32 +319,41 @@ code {
 }
 
 .footer {
-    background: $bg-footer;
-    width: 100%;
-    padding: 1em;
-    div {
-        height: 100%;
-        display: inline-block;
+    color: $text-secondary;
+    background: transparent;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    border-top: $border;
+    margin-left: 1em;
+    margin-right: 1em;
+    ul {
+        padding: 0;
+        list-style: none;
+        margin: 0;
+        display: flex;
+        max-width: 100%;
+        overflow: hidden;
     }
-    .contact {
-        background-color: $accent;
-        border-radius: $small-rad;
-        float: right;
-        a {
-            color: $bg;
-        }
-        :hover {
-            background: $accent-hover;
-        }
-        :active {
-            background: $accent-active;
-        }
+    li {
+        padding: 1em;
+        display: inline-block;
+        color: $text-tertiary;
     }
     a {
         color: $text-tertiary;
         text-decoration: none;
-        display: inline-block;
-        padding: 0.5em;
-        font-size: 0.9em;
+        font-style: none;
+        white-space: nowrap;
+        &:hover {
+            color: $text;
+        }
+    }
+    @media screen and (max-width: 850px) {
+        .separator {
+            display: none;
+        }
+        ul {
+            display: block;
+        }
     }
 }

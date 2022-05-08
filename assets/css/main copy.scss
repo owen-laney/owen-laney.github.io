@@ -3,6 +3,8 @@
 ---
 ;
 
+//THIS IS A COPY
+
 $text: #3b3b3b;
 $bg: #fff;
 $accent: #fad636;
@@ -24,6 +26,7 @@ $shadow: 2px 2px 8px $shadow-color;
     box-sizing: border-box;
     font-family: sans-serif;
     transition: 20ms;
+    background-color: red;
 }
 
 html,
@@ -40,6 +43,11 @@ body {
     padding: 1rem;
     margin: 0 auto;
     max-width: 80rem;
+}
+.post-content {
+    max-width: 50rem;
+    padding: 20em;
+    background-color: red;
 }
 
 ::selection {
@@ -209,10 +217,6 @@ pre.highlight {
     }
     .all-articles {
         grid-column: span 3 / auto;
-    }
-    .post-content {
-        padding-left: 10%;
-        padding-right: 10%;
     }
 }
 

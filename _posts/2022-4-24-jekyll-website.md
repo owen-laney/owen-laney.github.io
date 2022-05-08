@@ -1,6 +1,6 @@
 ---
-title: Making A GitHub Pages Site
-description: Jekyll makes building static websites easy
+title: Make A GitHub Pages Site
+description: Easily make static websites with jekyll
 layout: post
 thumbnail: assets/images/jekyll-tutorial.webp
 category: blog

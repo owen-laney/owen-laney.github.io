@@ -14,14 +14,17 @@
 
 <html>
   <body>
-    <header class="navbar">
-      <div>
-        <a class="home-btn" href={{ "/" }}>Owen Laney</a><a href="#" id="aboutBtn">About</a><a href={{ "/portfolio" }}>Portfolio</a><a href={{ "/blog" }}>Blog</a>
+    <nav class="navbar">
+      <div class="home-btn">
+        <a href={{ "/" }}>Owen Laney</a>
       </div>
-      <div>
-        <a href="mailto:owenlaney@gmail.com">Contact</a>
-      </div>
-    </header>
+      <ul class="navigation-links">
+        <li><a href="#" id="aboutBtn">About</a></li>
+        <li><a href={{ "/portfolio" }}>Portfolio</a></li>
+        <li><a href={{ "/blog" }}>Blog</a></li>
+        <li><a href="mailto:owenlaney@gmail.com">Contact</a></li>
+      </ul>
+    </nav>
 
     <section class="content">
       {{ content }}
@@ -42,23 +45,21 @@
     </div>
 
     <footer class="footer">
-      <div>
-        <a href={{ "/" }}>Home</a>
-        <a href={{ "/portfolio"}}>Portfolio</a>
-        <a href={{ "/blog" }}>Blog</a>
-      </div>
-      <a>|</a>
-      <div>
-        <a href="https://github.com/owen-laney">Github</a>
-        <a href="https://www.linkedin.com/in/owen-laney-07b78a239/">LinkedIn</a>
-      </div>
-      <a>|</a>
-      <div>
-        <a>©2022 Owen Laney</a>
-      </div>
-      <div class="contact">
-        <a href="mailto:owenlaney@gmail.com">Contact</a>
-      </div>
+      <div></div>
+      <ul class="navigation-links">
+        <li><a href={{ "/" }}>Home</a></li>
+        <li><a href={{ "/portfolio" }}>Portfolio</a></li>
+        <li><a href={{ "/blog" }}>Blog</a></li>
+        <li class="separator">|</li>
+        <li><a href="https://github.com/owen-laney">Github</a></li>
+        <li><a href="https://www.linkedin.com/in/owen-laney-07b78a239/">LinkedIn</a></li>
+        <li class="separator">|</li>
+        <li><a>©2022 Owen Laney</a></li>
+        <li class="separator">|</li>
+        <li><a href="mailto:owenlaney@gmail.com">Contact</a></li>
+        <div></div>
+      </ul>
+
     </footer>
 
     <script src="/scripts/main.js"></script>

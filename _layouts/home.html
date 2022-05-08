@@ -13,16 +13,17 @@
         {% assign blogPosts = site.posts | where:'category', 'blog' %}
         {% assign portfolioPosts = site.posts | where:'category', 'portfolio' %}
         <section class="posts-grid">
+            <h2>Blog</h2>
             {% for post in blogPosts limit:1 offset:0 %}
                 <a class="post-card post-card-1" href="{{ post.url }}" >
                     <div class="post-card-content">
                         <div class="featured-image" style="background-image:url( {{ post.thumbnail }} )"></div>
                         <div class="title-header">
                             <h2>{{ post.title}}</h2>
-                            <p>
+                            <h3>
                                 {{ post.description | truncatewords: 10 }}<br>
                                 {{ post.date | date: "%b %-d, %Y" }}
-                            </p>
+                            </h3>
                         </div>
                     </div>
                 </a>
@@ -33,10 +34,10 @@
                         <div class="featured-image" style="background-image:url( {{ post.thumbnail }} )"></div>
                         <div class="title-header">
                             <h2>{{ post.title}}</h2>
-                            <p>
+                            <h3>
                                 {{ post.description | truncatewords: 10 }}<br>
                                 {{ post.date | date: "%b %-d, %Y" }}
-                            </p>
+                            </h3>
                         </div>
                     </div>
                 </a>
@@ -45,16 +46,17 @@
         </section>
 
         <section class="posts-grid">
+            <h2>Projects</h2>
             {% for post in portfolioPosts limit:1 offset:0 %}
                 <a class="post-card post-card-1" href="{{ post.url }}" >
                     <div class="post-card-content">
                         <div class="featured-image" style="background-image:url( {{ post.thumbnail }} )"></div>
                         <div class="title-header">
                             <h2>{{ post.title}}</h2>
-                            <p>
+                            <h3>
                                 {{ post.description | truncatewords: 10 }}<br>
                                 {{ post.date | date: "%b %-d, %Y" }}
-                            </p>
+                            </h3>
                         </div>
                     </div>
                 </a>
@@ -65,10 +67,10 @@
                         <div class="featured-image" style="background-image:url( {{ post.thumbnail }} )"></div>
                         <div class="title-header">
                             <h2>{{ post.title}}</h2>
-                            <p>
+                            <h3>
                                 {{ post.description | truncatewords: 10 }}<br>
                                 {{ post.date | date: "%b %-d, %Y" }}
-                            </p>
+                            </h3>
                         </div>
                     </div>
                 </a>
