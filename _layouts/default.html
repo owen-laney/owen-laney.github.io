@@ -18,11 +18,23 @@
       <div class="home-btn">
         <a href={{ "/" }}>Owen Laney</a>
       </div>
-      <ul class="navigation-links">
-        <li><a href="#" id="aboutBtn">About</a></li>
-        <li><a href={{ "/portfolio" }}>Portfolio</a></li>
-        <li><a href={{ "/blog" }}>Blog</a></li>
-        <li><a href="mailto:owenlaney@gmail.com">Contact</a></li>
+      <div class="navigation-links nav-middle">
+        <ul class="nav-middle-content">
+          <li><a href="#" id="aboutBtn">About</a></li>
+          <li><a href={{ "/portfolio" }}>Portfolio</a></li>
+          <li><a href={{ "/blog" }}>Blog</a></li>
+          <li><a href="mailto:owenlaney@gmail.com">Contact</a></li>
+        </ul>
+      </div>
+      <ul class="navigation-links nav-right">
+        <div class="dropdown">
+          <li><button class="drop-btn"> ☰ </button></li>
+          <div class="drop-content">
+            <a href={{ "/portfolio" }}>Portfolio</a>
+            <a href={{ "/blog" }}>Blog</a>
+            <a href="mailto:owenlaney@gmail.com">Contact</a>
+          </div>
+        </div>
       </ul>
     </nav>
 
@@ -54,7 +66,7 @@
         <li><a href="https://github.com/owen-laney">Github</a></li>
         <li><a href="https://www.linkedin.com/in/owen-laney-07b78a239/">LinkedIn</a></li>
         <li class="separator">|</li>
-        <li><a>©2022 Owen Laney</a></li>
+        <li>©2022 Owen Laney</li>
         <li class="separator">|</li>
         <li><a href="mailto:owenlaney@gmail.com">Contact</a></li>
         <div></div>
